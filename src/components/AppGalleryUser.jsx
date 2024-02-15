@@ -1,5 +1,4 @@
 import { fetchApiUser } from "./JS/fetchApiUser";
-import { useState } from "react";
 
 function AppGalleryUser() {
   const { dataUser } = fetchApiUser();

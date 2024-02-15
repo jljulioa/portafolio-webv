@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function fetchApiUser(url) {
+export function fetchApiUser() {
   const [dataUser, setDataUser] = useState({
     urls: [{ signedUrl: "" }],
     urlsOri: [{ signedUrlOri: "" }],

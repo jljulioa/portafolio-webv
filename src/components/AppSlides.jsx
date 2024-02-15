@@ -5,7 +5,7 @@ import { RxDotFilled } from 'react-icons/rx';
 
 function AppSlides() {
 
-    const { data, loading } = fetchApi();
+    const { data } = fetchApi();
 
     const slides = data.urls.slice(0, 5)
 
@@ -43,7 +43,7 @@ function AppSlides() {
       <BsChevronCompactRight onClick={nextSlide} size={30} />
     </div>
     <div className='flex top-4 justify-center py-2'>
-      {slides.map((slide, slideIndex) => (
+      {slides.map((slideIndex) => (
         <div
           key={slideIndex}
           onClick={() => goToSlide(slideIndex)}
