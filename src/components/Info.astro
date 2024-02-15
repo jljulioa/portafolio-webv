@@ -1,0 +1,122 @@
+---
+import Title from "../layouts/Titles.astro";
+import Section from "../layouts/Section.astro";
+
+import WhatsAppIcon from "./icons/WhatsApp-ico.astro";
+import GmailIcon from "./icons/Gmail-ico.astro";
+import GitHubIcon from "./icons/GitHubLogo-icon.astro";
+import LinkeindIcon from "./icons/Linkeind-icon.astro";
+import CopyIcon from "./icons/Copy-icon.astro";
+
+/** Icon links to social media — edit these with links to your profiles! */
+const iconLinks: { label: string; href: string; icon: any }[] = [
+  { label: "GitHub", href: "https://github.com/jljulioa", icon: GitHubIcon },
+  {
+    label: "WhatsApp",
+    href: "https://wa.me/+573008865675",
+    icon: WhatsAppIcon,
+  },
+  {
+    label: "Linkedin",
+    href: "https://www.linkedin.com/in/jljulioa1408/",
+    icon: LinkeindIcon,
+  },
+  { label: "Gmail", href: "mailto:jljulioa@gmail.com", icon: GmailIcon },
+];
+---
+
+<Section class="grid justify-center items-center px-8 pt-20" id="info">
+  <Title>Work Together?</Title>
+  <p class="pb-8 pt-20 text-xl md:text-2xl">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut repellendus
+    consequatur eius quod quisquam, qui eligendi maxime numquam earum totam ea
+    nostrum autem, itaque eos facilis quasi aperiam repellat. Dolorem?
+  </p>
+  <div class="socials flex flex-row justify-center items-center">
+    {
+      iconLinks.map((social) => (
+        <>
+          <a
+            data-tooltip-target={`tooltip-default-${social.label}`}
+            href={social.href}
+            id={social.label}
+            target="_blank"
+            class="social rounded-3xl mx-2 ring-4 ring-blue-700 hover:ring-[#665fcc] dark:hover:ring-blue-700 dark:ring-[#665fcc] bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700"
+          >
+            <social.icon class="sm:size-16 size-12 px-3" />
+          </a>
+          <div
+            id={`tooltip-default-${social.label}`}
+            role="tooltip"
+            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+          >
+            {social.label} <div class="tooltip-arrow" data-popper-arrow />
+          </div>
+        </>
+      ))
+    }
+    <button
+      id="copyEmail"
+      data-tooltip-target="tooltip-copy"
+      class="copyEmail rounded-3xl mx-2 ring-4 ring-blue-700 hover:ring-[#665fcc] dark:hover:ring-blue-700 dark:ring-[#665fcc] bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700"
+    >
+      <CopyIcon class="sm:size-16 size-12 px-3" />
+    </button>
+    <input
+      type="text"
+      id="copyEmailInput"
+      value="jljulioa@gmail.com"
+      class="sr-only peer"
+      checked
+    />
+    <div
+      id="tooltip-copy"
+      role="tooltip"
+      class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+    >
+      Copy@email <div class="tooltip-arrow" data-popper-arrow></div>
+    </div>
+  </div>
+  <div class="flex mx-auto mt-8">
+    <div class="w-full pt-4">
+      <a
+        class="w-full"
+        href="https://drive.google.com/file/d/1l9L-pFVUgMIiCDYwoZd9ZjCs5q7-xknn/view?usp=drive_link"
+        target="_blank"
+      >
+        <button
+          data-tooltip-target="tooltip-animation-send"
+          type="button"
+          class="text-white text-lg md:text-2xl bg-blue-700 hover:bg-[#665fcc] dark:bg-[#665fcc] dark:hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full w-full px-5 py-2.5 text-center"
+        >
+          CV@jljulioa
+        </button>
+      </a>
+      <div
+        id="tooltip-animation-send"
+        role="tooltip"
+        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+      >
+        PDF/CV @jljulioa
+        <div class="tooltip-arrow" data-popper-arrow></div>
+      </div>
+    </div>
+  </div>
+</Section>
+
+<script>
+    const copyEmail = document.getElementById(
+      "copyEmailInput"
+    ) as HTMLInputElement;
+
+    const copyButton = document.getElementById("copyEmail") as HTMLElement;
+
+    copyButton?.addEventListener("click", () => {
+      copyEmail.select();
+      copyEmail.setSelectionRange(0, 99999); // For mobile devices
+
+      console.log(copyEmail.value);
+      // Copy the text inside the text field
+      navigator.clipboard.writeText(copyEmail.value);
+    });
+</script>

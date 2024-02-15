@@ -1,0 +1,61 @@
+<label
+  data-tooltip-target="tooltip-top"
+  data-tooltip-placement="top"
+  class="relative inline-flex items-center cursor-pointer"
+>
+  <input
+    type="checkbox"
+    id="darkmode"
+    value="dark"
+    class="sr-only peer"
+    checked
+  />
+  <div class="w-10 h-10 m-auto rounded-full flex justify-center items-center bg-gray-200 dark:bg-slate-700">
+    <svg class="w-auto h-auto dark:hidden"
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="-47.39 -47.39 568.72 568.72"
+      xml:space="preserve"
+      fill="#000000"
+      ><g id="SVGRepo_bgCarrier" stroke-width="0"
+        ><rect
+          x="-47.39"
+          y="-47.39"
+          width="568.72"
+          height="568.72"
+          rx="284.36"
+          fill="#d6d6d6"
+         ></rect></g
+      ><g
+        id="SVGRepo_tracerCarrier"
+        stroke-linecap="round"
+        stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+        <circle style="fill:#001220;" cx="236.967" cy="236.967" r="236.967"
+        ></circle>
+        <path
+          style="fill:#F1EB75;"
+          d="M248.443,242.685c0-52.318,28.516-97.945,70.832-122.289c-15.757-6.601-33.055-10.26-51.21-10.26 c-73.204,0-132.549,59.341-132.549,132.549c0,73.201,59.341,132.549,132.549,132.549c18.155,0,35.453-3.663,51.21-10.267 C276.96,340.63,248.443,294.995,248.443,242.685z"
+        ></path>
+      </g></svg
+    >
+	<svg class="hidden w-auto h-auto dark:block p-1" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 473.93 473.93" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle style="fill:#F2BE3E;" cx="236.966" cy="236.966" r="236.966"></circle> <circle style="fill:#F1EB75;" cx="236.966" cy="236.966" r="117.154"></circle> </g></svg>
+
+  </div>
+</label>
+<div
+  id="tooltip-top"
+  role="tooltip"
+  class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+>
+  Change Theme
+  <div class="tooltip-arrow" data-popper-arrow></div>
+</div>
+
+<script>
+  const darkModeImput = document.querySelector("#darkmode");
+  darkModeImput?.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+  });
+</script>

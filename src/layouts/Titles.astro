@@ -1,0 +1,11 @@
+---
+const { class: className, id } = Astro.props
+---
+
+<h1
+  id={id}
+  data-section={id}
+  class={`section ${className} text-4xl text-center w-auto mx-auto bg-clip-text text-transparent bg-gradient-to-r from-[#7e5aff] to-[#3d30ff] dark:bg-gradient-to-r dark:from-purple-700 dark:to-violet-400 dark:to-90% font-extrabold`}
+>
+  <slot />
+</h1>

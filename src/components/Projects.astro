@@ -1,0 +1,48 @@
+---
+import Section from "../layouts/Section.astro";
+import Title from '../layouts/Titles.astro'
+
+---
+
+<Section >
+    <div class="grid justify-center items-center pt-20" id="projects">
+        <Title >Projects</Title>
+        <p class="pb-8 pt-20 text-xl md:text-2xl text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut repellendus consequatur eius quod quisquam, qui eligendi maxime numquam earum totam ea nostrum autem, itaque eos facilis quasi aperiam repellat. Dolorem?</p>
+        <div class="px-8 grid grid-cols-1 justify-items-center sm:grid-cols-2 gap-10">
+            <div class="max-w-sm px-0 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <a href="#" class=" max-w-screen py-2">
+                    <img class="rounded-t-lg" src="/assets/P1.png" alt="" />
+                </a>
+                <div class="p-5">
+                    <a href="#">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Backend S3 Wallpapers</h5>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Backend service for Wallpapers Management using Lambda API Gateway and serverless as a Framework</p>
+                    <a href="#" class="inline-flex justify-end items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Read more
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="max-w-sm px-0 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <a href="#" class=" max-w-screen py-2">
+                    <img class="rounded-t-lg" src="/assets/P2.png" alt="" />
+                </a>
+                <div class="p-5">
+                    <a href="#">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">EKS & ECR Orquestration</h5>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Deployment an application using GitHub Actions to pull image to ECR and EKS With external DNS and Route 53 integration</p>
+                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Read more
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</Section>

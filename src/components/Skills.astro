@@ -1,0 +1,52 @@
+---
+import KubeIcon from './icons/kubernetes-icon.astro';
+import AWSIcon from '../components/icons/AWS-icon.astro';
+import GitHub from './icons/GitHub-icon.astro';
+import Actions from './icons/Actions-icon.astro';
+import Helm from './icons/Helm-icon.astro'
+import EKS from './icons/EKS-icon.astro'
+import ServerlessIcon from './icons/Serverless-icon.astro';
+import Terraform from './icons/Terraform-icon.astro'
+import Sections from '../layouts/Section.astro';
+import Title from '../layouts/Titles.astro';
+
+---
+
+
+
+<Sections class="text-center" id="skills" >
+        <Title class="inline-block">Tech Skills</Title>
+        <p class="pb-8 pt-20 text-xl md:text-2xl text-center">
+            This are a couple of skills or utilities that I have learned by practicing every day, always thinking about the best possible aproach
+        </p>
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 max-w-auto">          
+                {
+                    [{ name: 'TERRAFORM(Learning)', icon: Terraform},
+                    { name: 'SERVERLESS FRAMEWORK', icon: ServerlessIcon },
+                    { name: 'AWS', icon: AWSIcon},
+                    { name: 'AWS EKS', icon: EKS },
+                    { name: 'HELM', icon: Helm },
+                    { name:'KUBERNETES', icon: KubeIcon },
+                    { name:'GITHUB', icon: GitHub},
+                    { name:'GitHub Actions', icon: Actions}
+                    ].map((brand) =>(
+                    <div class="py-2">
+                        <button data-tooltip-target={`tooltip-default-${brand.name}`} type="button" class="relative inline-flex items-center justify-center p-0.5 mx-2 my-2 overflow-hidden rounded-2xl bg-gradient-to-t from-slate-800 dark:from-purple-300 to-transparent ring-4 ring-gray-300 dark:ring-purple-400 hover:ring-blue-500 dark:hover:ring-blue-500">
+                            <brand.icon class="size-20 sm:size-24 md:size-28 px-4"/>
+                        </button>
+                        <div id={`tooltip-default-${brand.name}`} role="tooltip" class="absolute z-10 invisible sm:inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                            {brand.name}
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+                    </div>
+                    ))
+                }
+            <div/>  
+</Sections>
+
+
+
+
+
+
+	

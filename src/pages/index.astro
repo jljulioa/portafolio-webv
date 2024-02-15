@@ -1,0 +1,31 @@
+---
+// Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Component Sections Imports
+
+import About from "../components/about.astro";
+import Skills from "../components/Skills.astro";
+import Hero from "../components/Hero.astro";
+import Recomendation from "../components/Recomendation.astro";
+import Projects from "../components/Projects.astro";
+import Education from "../components/Education.astro";
+import Info from "../components/Info.astro";
+import Nav from "../components/Nav.astro";
+import AppGallery from "../components/AppGallery";
+import AppSlides from "../components/AppSlides";
+---
+
+<BaseLayout>
+  <Nav />
+  <Hero />
+  <Recomendation />
+  <Skills />
+  <Projects />
+  <Education />
+  <About />
+  <Info />
+  <div id="gallery">
+    <AppSlides client:load />
+  </div>
+</BaseLayout>
