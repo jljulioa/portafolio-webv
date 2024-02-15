@@ -21,7 +21,7 @@ const { title, description } = Astro.props;
     <MainHead title={title} description={description} />
   </head>
   <body
-    class="flex justify-center items-center w-full mx-auto bg-[url('/assets/backgrounds/layered-waves-haikei.svg')] dark:bg-[url('/assets/backgrounds/layered-waves-haikei-light.svg')] bg-cover bg-center bg-no-repeat bg-[#001220] text-neutral-400 dark:text-slate-900 dark:bg-indigo-100"
+    class="flex justify-center items-center w-auto mx-auto bg-[url('/assets/backgrounds/layered-waves-haikei.svg')] dark:bg-[url('/assets/backgrounds/layered-waves-haikei-light.svg')] bg-cover bg-center bg-no-repeat bg-[#001220] text-neutral-400 dark:text-slate-900 dark:bg-indigo-100"
   >
     <div class="w-full mx-auto">
       <slot />
@@ -36,16 +36,15 @@ const { title, description } = Astro.props;
       is:inline
       src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
     ></script>
-  </body><style is:global>
-    :root {
-      color-scheme: light dark;
-    }
+    <style is:global>
+      :root {
+        color-scheme: light dark;
+      }
 
-    html {
-      font-family: "Onest Variable", sans-serif;
-      scroll-behavior: smooth;
-    }
-
-
-  </style>
+      html {
+        font-family: "Onest Variable", sans-serif;
+        scroll-behavior: smooth;
+      }
+    </style>
+  </body>
 </html>

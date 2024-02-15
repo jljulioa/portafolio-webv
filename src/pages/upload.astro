@@ -1,26 +1,32 @@
 ---
-import AppUpload from '../components/AppUpload';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Section from '../layouts/Section.astro';
-import Title from '../layouts/Titles.astro';
+import AppUpload from "../components/AppUpload";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../layouts/Section.astro";
+import Title from "../layouts/Titles.astro";
 import AppGallery from "../components/AppGallery";
-import AppGalleryUser from '../components/AppGalleryUser';
+import AppGalleryUser from "../components/AppGalleryUser";
 ---
 
 <BaseLayout>
-    <Section class="">
-        <Title class="py-20">WALLPAPER UPLOAD</Title>
-        <div class="w-auto flex items-center justify-center">
-            <AppUpload client:load>
-                
-            </AppUpload>
-        </div>
-    </Section>
-    <div>
-        <AppGalleryUser client:load/>
+  <Section class="">
+    <Title class="py-20">WALLPAPER UPLOAD</Title>
+    <div class="w-auto flex items-center justify-center">
+      <AppUpload client:load />
     </div>
-    <div class="max-w-full grid justify-center items-center">
-        <AppGallery client:load/>
-    </div>
+    <a class="flex justify-center pt-20" href="/">
+      <button
+        data-tooltip-target="tooltip-animation-gallery"
+        type="button"
+        class="text-white text-lg md:text-2xl bg-blue-700 hover:bg-[#665fcc] dark:bg-[#665fcc] dark:hover:bg-blue-700 font-medium rounded-3xl w-auto px-5 py-2.5 text-center"
+      >
+        HOME
+      </button>
+    </a>
+  </Section>
+  <div>
+    <AppGalleryUser client:load />
+  </div>
+  <div class="max-w-full grid justify-center items-center">
+    <AppGallery client:load />
+  </div>
 </BaseLayout>
-

@@ -13,6 +13,7 @@ import Education from "../components/Education.astro";
 import Info from "../components/Info.astro";
 import Nav from "../components/Nav.astro";
 import AppSlides from "../components/AppSlides";
+import Gallery from "../components/Gallery.astro";
 ---
 
 <BaseLayout>
@@ -21,10 +22,8 @@ import AppSlides from "../components/AppSlides";
   <Recomendation />
   <Skills />
   <Projects />
+  <Gallery/>
   <Education />
   <About />
   <Info />
-  <div id="gallery">
-    <AppSlides client:load />
-  </div>
 </BaseLayout>
