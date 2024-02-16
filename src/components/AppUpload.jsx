@@ -17,7 +17,7 @@ function AppUpload() {
   const handleUpload = async () => {
     try {
       const response = await fetch(
-        `https://7u25b1bw4e.execute-api.us-east-1.amazonaws.com/dev/upload?filename=${namefile.name}`
+        `https://idge3vng43.execute-api.us-east-1.amazonaws.com/dev/upload?filename=${namefile.name}`
       );
       const data = await response.json();
 

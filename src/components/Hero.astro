@@ -1,18 +1,24 @@
 ---
-
+import Frame from './icons/Frame.astro';
+import Profile from './icons/Profile.astro';
+import FrameCircle from './icons/Frame-circle.astro';
 ---
 
-<main class="flex justify-center items-center mt-40 max-w-[1280px] w-auto mx-auto h-auto sm:mb-28 px-8 rounded-3xl sm:bg-[url('/assets/backgrounds/blob-scene-haikei-hero.svg')] dark:sm:bg-[url('/assets/backgrounds/blob-scene-haikei-heo-dark.svg')] bg-cover bg-center bg-no-repeat py-10" id="hero">
-	<div class="grid mx-4 md:grid-cols-2 gap8 sm:my-12">
-		<div class="grid justify-center w-full h-auto items-center">
-			<img src="/assets/wallhaven-m3vg68.jpg" class="w-96  rounded-full ring-4 ring-gray-300 dark:ring-gray-500" alt="Profile @jljulioa">
-		</div>
-		<div class="flex flex-col justify-center items-center">
-			<h1 class="text-8xl text-center font-bold w-full bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 ">
-				@Jaime Julio
-			</h1>
-			<p class="text-3xl pt-8 md:px-8 text-center text-white dark:text-gray-700 font-semibold">AWS DevOps Jr. and Mechanical Engineer with MBA (Project Admin)</p>
-		</div>
+<main class="grid sm:grid-cols-3 mt-40 max-w-7xl w-full mx-auto sm:mb-28 px-2 sm:rounded-3xl text-white dark:text-[#665fcc] sm:bg-[url('/assets/backgrounds/blob-scene-haikei-hero.svg')] dark:sm:bg-[url('/assets/backgrounds/blob-scene-haikei-heo-dark.svg')] bg-cover bg-center bg-no-repeat py-10" id="hero">
+	<h1 class="grid sm:items-end text-center text-2xl sm:text-xl md:text-2xl font-semibold">AWS DevOps Jr. and Mechanical Engineer with MBA (Project Admin)</h1>
+	<div class="-order-1 sm:order-1 grid items-center justify-center">
+		<img src="/assets/jljulioa-2.png" class="hero-image max-w-96 sm:bg-white bg-[url('/assets/backgrounds/bg-profile-1.svg')] dark:bg-[url('/assets/backgrounds/bg-profile-dark.svg')]  dark:sm:bg-[#665fcc] bg-cover bg-center bg-no-repeat" alt="jljulioa">
 	</div>
+	<h1 class="grid sm:justify-end text-center pb-4 text-3xl sm:text-4xl md:text-5xl font-bold -order-1 sm:order-1">@Jaime Julio A.</h1>
 </main>
+<img src="/assets/backgrounds/bg-div-up.svg" class="w-full sm:hidden dark:hidden pb-20" alt="">
+<img src="/assets/backgrounds/bg-div-up-dark.svg" class="w-full hidden dark:block dark:sm:hidden pb-20" alt="">
 
+
+<style>
+	.hero-image {
+		-webkit-mask-image: url(/assets/frame.svg);
+		-webkit-mask-size: contain;
+		-webkit-mask-repeat: no-repeat;
+	}
+</style>
