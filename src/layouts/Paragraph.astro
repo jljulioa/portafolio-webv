@@ -1,0 +1,10 @@
+---
+const { class: className, id } = Astro.props;
+---
+
+<p
+  id={id}
+  class={` ${className} my-10 text-xl md:text-2xl text-center inline-block justify-center items-center`}
+>
+  <slot />
+</p>

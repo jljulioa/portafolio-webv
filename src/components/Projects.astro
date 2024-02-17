@@ -1,18 +1,16 @@
 ---
 import Section from "../layouts/Section.astro";
 import Title from "../layouts/Titles.astro";
+import Paragraph from "../layouts/Paragraph.astro";
 ---
 
-<Section>
-  <div class="grid justify-center items-center pt-20" id="projects">
+<Section id="projects">
     <Title>Projects</Title>
-    <p class="pb-8 pt-20 text-xl md:text-2xl text-center">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut repellendus
-      consequatur eius quod quisquam, qui eligendi maxime numquam earum totam ea
-      nostrum autem, itaque eos facilis quasi aperiam repellat. Dolorem?
-    </p>
+    <Paragraph>
+      I've completed a couple of projects through consistent daily practice, independently tackling challenges and enhancing my skills.
+    </Paragraph>
     <div
-      class="grid grid-cols-1 justify-items-center sm:grid-cols-2 gap-10"
+      class="grid grid-cols-1 sm:grid-cols-2 gap-10 m-4"
     >
       <div
         class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
@@ -95,5 +93,4 @@ import Title from "../layouts/Titles.astro";
         </div>
       </div>
     </div>
-  </div>
 </Section>

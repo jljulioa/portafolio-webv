@@ -54,8 +54,21 @@
 </div>
 
 <script>
-  const darkModeImput = document.querySelector("#darkmode");
-  darkModeImput?.addEventListener("click", () => {
-    document.documentElement.classList.toggle("dark");
-  });
+  const darkModeInput = document.querySelector<HTMLInputElement>("#darkmode");
+
+  if (darkModeInput) {
+    const storedDarkMode = localStorage.getItem("darkMode");
+
+    if (storedDarkMode) {
+      document.documentElement.classList.toggle("dark", storedDarkMode === "true");
+      darkModeInput.checked = storedDarkMode === "true";
+    }
+
+    darkModeInput.addEventListener("click", () => {
+      const isDarkMode = darkModeInput.checked;
+      document.documentElement.classList.toggle("dark", isDarkMode);
+      localStorage.setItem("darkMode", isDarkMode.toString());
+    });
+  }
 </script>
+

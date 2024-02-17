@@ -7,6 +7,7 @@ import GmailIcon from "./icons/Gmail-ico.astro";
 import GitHubIcon from "./icons/GitHubLogo-icon.astro";
 import LinkeindIcon from "./icons/Linkeind-icon.astro";
 import CopyIcon from "./icons/Copy-icon.astro";
+import Paragraph from "../layouts/Paragraph.astro";
 
 /** Icon links to social media — edit these with links to your profiles! */
 const iconLinks: { label: string; href: string; icon: any }[] = [
@@ -25,13 +26,16 @@ const iconLinks: { label: string; href: string; icon: any }[] = [
 ];
 ---
 
-<Section class="grid justify-center items-center px-8 pt-20" id="info">
+<Section id="info">
   <Title>Work Together?</Title>
-  <p class="pb-8 pt-20 text-xl md:text-2xl">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut repellendus
-    consequatur eius quod quisquam, qui eligendi maxime numquam earum totam ea
-    nostrum autem, itaque eos facilis quasi aperiam repellat. Dolorem?
-  </p>
+  <Paragraph>
+    Upon reviewing my portfolio, especially the "About Me" section, I hope
+    you've gained an understanding of my versatility. While I may lack formal
+    experience in the Tech Industry, my diverse skill set and ability to employ
+    various techniques make me an invaluable asset. I am confident that I can
+    contribute significantly, bringing fresh perspectives and seizing new
+    opportunities for your team.
+  </Paragraph>
   <div class="socials flex flex-row justify-center items-center">
     {
       iconLinks.map((social) => (
@@ -77,7 +81,7 @@ const iconLinks: { label: string; href: string; icon: any }[] = [
       Copy@email <div class="tooltip-arrow" data-popper-arrow></div>
     </div>
   </div>
-  <div class="flex mx-auto mt-8">
+  <div class="mx-auto mt-8 inline-block">
     <div class="w-full pt-4">
       <a
         class="w-full"
@@ -105,18 +109,18 @@ const iconLinks: { label: string; href: string; icon: any }[] = [
 </Section>
 
 <script>
-    const copyEmail = document.getElementById(
-      "copyEmailInput"
-    ) as HTMLInputElement;
+  const copyEmail = document.getElementById(
+    "copyEmailInput"
+  ) as HTMLInputElement;
 
-    const copyButton = document.getElementById("copyEmail") as HTMLElement;
+  const copyButton = document.getElementById("copyEmail") as HTMLElement;
 
-    copyButton?.addEventListener("click", () => {
-      copyEmail.select();
-      copyEmail.setSelectionRange(0, 99999); // For mobile devices
+  copyButton?.addEventListener("click", () => {
+    copyEmail.select();
+    copyEmail.setSelectionRange(0, 99999); // For mobile devices
 
-      console.log(copyEmail.value);
-      // Copy the text inside the text field
-      navigator.clipboard.writeText(copyEmail.value);
-    });
+    console.log(copyEmail.value);
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyEmail.value);
+  });
 </script>

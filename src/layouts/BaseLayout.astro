@@ -22,18 +22,13 @@ const { title, description } = Astro.props;
     <MainHead title={title} description={description} />
   </head>
   <body
-    class="relative h-screen bg-[#001220] text-neutral-400 dark:text-slate-900 dark:bg-indigo-100"
+    class="relative bg-[#001220] text-neutral-400 dark:text-slate-900 dark:bg-indigo-100"
   >
-    <div class="relative w-full h-full">
+    <div class="w-full h-full">
       <Nav />
       <slot />
       <FooterV2 />
     </div>
-
-    <style>
-      :root {
-      }
-    </style>
     <script
       is:inline
       src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"

@@ -8,25 +8,19 @@ import AppGalleryUser from "../components/AppGalleryUser";
 ---
 
 <BaseLayout>
-  <Section class="">
+  <Section class="bg-[url('/assets/backgrounds/blob-scene-haikei-hero.svg')] dark:bg-[url('/assets/backgrounds/blob-scene-haikei-hero-dark.svg')] bg-cover bg-center pb-20 bg-no-repeat  sm:rounded-2xl">
     <Title class="py-20">WALLPAPER UPLOAD</Title>
-    <div class="w-auto flex items-center justify-center">
+    <div class="w-full max-w-auto flex items-center justify-center">
       <AppUpload client:load />
     </div>
-    <a class="flex justify-center pt-20" href="/">
-      <button
-        data-tooltip-target="tooltip-animation-gallery"
-        type="button"
-        class="text-white text-lg md:text-2xl bg-blue-700 hover:bg-[#665fcc] dark:bg-[#665fcc] dark:hover:bg-blue-700 font-medium rounded-3xl w-auto px-5 py-2.5 text-center"
-      >
-        HOME
-      </button>
     </a>
   </Section>
-  <div>
+  <di class="max-w-full grid justify-center items-center">
+    <Title>User Wallpapers</Title>
     <AppGalleryUser client:load />
-  </div>
+  </di>
   <div class="max-w-full grid justify-center items-center">
+    <Title>Wall-AI Repo</Title>
     <AppGallery client:load />
   </div>
 </BaseLayout>

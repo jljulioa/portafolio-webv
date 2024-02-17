@@ -3,16 +3,14 @@ import Icon from "./Icon.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 import type { iconPaths } from "./IconPaths";
 
-
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-  { label: "Home", href: "hero" },
-  { label: "Recomendation", href: "reco" },
-  { label: "Projects", href: "projects" },
-  { label: "Gallery", href: "gallery" },
-  { label: "Education", href: "education" },
+  { label: "Home", href: "/" },
+  { label: "About@Me", href: "/aboutMe" },
+  { label: "About@Web", href: "/aboutWeb" },
+  { label: "Wall-AI", href: "/upload" },
+  { label: "Contact@Me", href: "/#info" },
 ];
-
 ---
 
 <nav
@@ -27,7 +25,7 @@ const textLinks: { label: string; href: string }[] = [
     </a>
     <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
       <div class="flex justify-center items-center">
-        <ThemeToggle/>
+        <ThemeToggle />
       </div>
       <button
         id="menu-button"
@@ -89,14 +87,14 @@ const textLinks: { label: string; href: string }[] = [
           textLinks.map(({ label, href }) => (
             <li class="py-4 md:py-0 text-center">
               <a
-                aria-current={Astro.url.hash === `#${href}`}
+                aria-current={Astro.url.hash === `${href}`}
                 class:list={[
                   "link",
                   {
-                    active: Astro.url.hash === `#${href}`,
+                    active: Astro.url.hash === `${href}`,
                   },
                 ]}
-                href={`#${href}`}
+                href={`${href}`}
               >
                 {label}
               </a>
@@ -107,5 +105,3 @@ const textLinks: { label: string; href: string }[] = [
     </div>
   </div>
 </nav>
-
-

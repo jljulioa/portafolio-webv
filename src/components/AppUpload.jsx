@@ -47,17 +47,17 @@ function AppUpload() {
   };
 
   return (
-    <div className="relative flex items-center justify-center my-auto">
-      <div className=" flex sm:flex-row flex-col gap-4 w-auto border-4 rounded-lg p-4 items-center justify-center">
+    <div className="relative flex items-center justify-center my-auto ">
+      <div className=" flex sm:flex-row flex-col gap-2 border-4 dark:border-[#665fcc] rounded-lg p-4 items-center justify-center dark:bg-gray-700">
         <input
-          className="rounded-lg bg-slate-100 h-full w-full border-2 mx-4"
+          className="rounded-lg bg-slate-100 h-full w-full border-2 dark:border-[#665fcc] mx-4"
           type="file"
           ref={fileInputRef}
           id="uploadInput"
           onChange={upload}
         />
         <button
-          className="bg-slate-700 rounded-lg py-2 px-3 mx-3 hover:bg-blue-600 hover:text-slate-900 hover:ring-2"
+          className="bg-slate-700 dark:bg-[#665fcc] rounded-lg py-2 px-4 mx-3 hover:bg-blue-600 text-white hover:ring-2"
           onClick={handleUpload}
         >
           UPLOAD S3

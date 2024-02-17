@@ -9,16 +9,17 @@ import ServerlessIcon from './icons/Serverless-icon.astro';
 import Terraform from './icons/Terraform-icon.astro'
 import Sections from '../layouts/Section.astro';
 import Title from '../layouts/Titles.astro';
+import Paragraph from '../layouts/Paragraph.astro';
 
 ---
 
 
 
-<Sections class="text-center" id="skills" >
-        <Title class="inline-block">Tech Skills</Title>
-        <p class="pb-8 pt-20 text-xl md:text-2xl text-center">
-            This are a couple of skills or utilities that I have learned by practicing every day, always thinking about the best possible aproach
-        </p>
+<Sections id="skills" >
+        <Title>Tech Skills</Title>
+        <Paragraph>
+            These are a few skills and tools I've cultivated through daily practice, consistently seeking optimal approaches for continuous improvement.
+        </Paragraph>
             <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 max-w-auto">          
                 {
                     [{ name: 'TERRAFORM(Learning)', icon: Terraform},

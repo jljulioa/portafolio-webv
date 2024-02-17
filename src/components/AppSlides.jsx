@@ -29,7 +29,7 @@ function AppSlides() {
   };
 
   return (
-    <div className="max-w-[800px] sm:h-[780px] w-full h-[400px] m-auto py-16 relative group">
+    <div className="max-w-[800px] sm:h-[780px] w-full h-[400px] m-auto px-4 py-16 relative group">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].signedUrl})` }}
         className="w-full h-full ring-4 ring-blue-700 dark:ring-[#665fcc] rounded-2xl bg-center bg-cover duration-500"
