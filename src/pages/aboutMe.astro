@@ -1,44 +1,69 @@
 ---
-import AppUpload from "../components/AppUpload";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "../layouts/Section.astro";
 import Title from "../layouts/Titles.astro";
-import Paragraph from '../layouts/Paragraph.astro'
+import Paragraph from "../layouts/Paragraph.astro";
 ---
 
 <BaseLayout>
   <Section class="">
     <Title class="py-20">About @Me</Title>
-    <Paragraph>This Time I want to share with you What I have been doing so far, also about myself</Paragraph>
-    <Paragraph class="text-wrap">In my career, I have developed many technical skills, including ISO 55000, AWS Cloud, Project
-        Management (MBA), among others, which have enabled me to contribute to the success of many organizations across various sectors.
-        <br><br>
-        People around me have often praised my capacity to learn quickly and adapt to new
-        situations. This is primarily due to my pragmatic approach, always focusing on finding the
-        most effective solutions and utilizing the necessary tools. I never shy away from challenges
-        and tackle them head-on.
-        <br><br>
-        One of my most notable achievements has been the establishment and growth of my own
-        business, Fox Moto – Parts, a motorcycle workshop. Since its inception in 2018, I have
-        successfully applied my knowledge in project management, forecasting, marketing,
-        financial analytics, inventory management, and asset management. By implementing
-        improved methods and practices for motorcycle repair and maintenance, I have led my
-        team to become one of the top workshops in my town. As a result of my efforts, I now own
-        a local workshop facility that has doubled in value since its acquisition in 2021.
-        In addition to my work in the motorcycle workshop sector, I had the opportunity to
-        contribute as a trainer with KHUA GPC S.A.S in the implementation of the ART (Territory
-        Restitution Agency) program. This initiative aims to support individuals who have been
-        adversely affected by the violence caused by illegal groups in Colombia. As part of my
-        role, I was responsible for guiding a group of individuals who had little to no prior
-        experience in this field.
-        <br><br>
-        During my experience as a mechanical engineer at WIN Software S.A.S., a CMMS
-        maintenance services company, I provided guidance and support to various clients across
-        industries such as Zafran sauces (food industry), the General Hospital of Medellín,
-        and Coremar Group (maritime services). Notably, I implemented a new Kardex
-        management system for Zafran, improved critical equipment availability for medical
-        examinations at HGM, and played a key role in training new employees and optimizing
-        operational indexes at Coremar Group.
-        </Paragraph>
+    <Paragraph class="text-wrap mb-20">
+      This Time I want to share with you What I have been doing so far, also
+      about myself.<br /><br />
+      In my career, I have developed many technical skills, including ISO 55000,
+      AWS Cloud, Project Management (MBA), among others, which have enabled me to
+      contribute to the success of many organizations across various sectors.
+      <br /><br />
+      People around me have often praised my capacity to learn quickly and adapt
+      to new situations. This is primarily due to my pragmatic approach, always focusing
+      on finding the most effective solutions and utilizing the necessary tools.
+      I never shy away from challenges and tackle them head-on.
+      <br /><br />
+      One of my most notable achievements has been the establishment and growth of
+      my own business, Fox Moto – Parts, a motorcycle workshop. Since its inception
+      in 2018, I have successfully applied my knowledge in project management, forecasting,
+      marketing, financial analytics, inventory management, and asset management.
+      By implementing improved methods and practices for motorcycle repair and maintenance,
+      I have led my team to become one of the top workshops in my town. As a result
+      of my efforts, I now own a local workshop facility that has doubled in value
+      since its acquisition in 2021. In addition to my work in the motorcycle workshop
+      sector, I had the opportunity to contribute as a trainer with KHUA GPC S.A.S
+      in the implementation of the ART (Territory Restitution Agency) program. This
+      initiative aims to support individuals who have been adversely affected by
+      the violence caused by illegal groups in Colombia. As part of my role, I was
+      responsible for guiding a group of individuals who had little to no prior experience
+      in this field.
+      <br /><br />
+      During my experience as a mechanical engineer at WIN Software S.A.S., a CMMS
+      maintenance services company, I provided guidance and support to various clients
+      across industries such as Zafran sauces (food industry), the General Hospital
+      of Medellín, and Coremar Group (maritime services). Notably, I implemented
+      a new Kardex management system for Zafran, improved critical equipment availability
+      for medical examinations at HGM, and played a key role in training new employees
+      and optimizing operational indexes at Coremar Group.
+    </Paragraph>
+    <Title class="mt-20">Music I like</Title>
+    <Paragraph>
+      I would like to share with you what kind of music I am listening this
+      days. I have to say that I like yo hear a wide range of rhytms, but this
+      days I am a rock guy.
+    </Paragraph>
+    <div class="rounded-xl ring-2 ring-white">
+      <iframe
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/playlist/3y5DnmUjTZR0fuOM8zJ733?utm_source=generator&theme=0"
+        width="100%"
+        height="352"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"></iframe>
+    </div>
+    <Title class="mt-20">Where do I Live?</Title>
+    <Paragraph>
+      I am livig in my hometwon Valencia(Cordoba/Colombia) with my family, my dougther and my wife. Here
+      lives my parents also, I really enjoy the life here, but sometimes it gets
+      small this place
+    </Paragraph>
   </Section>
 </BaseLayout>

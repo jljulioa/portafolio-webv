@@ -36,76 +36,77 @@ const iconLinks: { label: string; href: string; icon: any }[] = [
     contribute significantly, bringing fresh perspectives and seizing new
     opportunities for your team.
   </Paragraph>
-  <div class="socials flex flex-row justify-center items-center">
+  <div>
     {
       iconLinks.map((social) => (
         <>
-          <a
-            data-tooltip-target={`tooltip-default-${social.label}`}
-            href={social.href}
-            id={social.label}
-            target="_blank"
-            class="social rounded-3xl mx-2 ring-4 ring-blue-700 hover:ring-[#665fcc] dark:hover:ring-blue-700 dark:ring-[#665fcc] bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700"
-          >
-            <social.icon class="sm:size-16 size-12 px-3" />
+          <a href={social.href} id={social.label} target="_blank">
+            <button
+              type="button"
+              data-tooltip-target={`tooltip-contact-${social.label}`}
+              class="relative text-gray-900 bg-white hover:bg-slate-200 border-4 border-[#3d30ff] dark:border-[#665fcc] me-2 rounded-lg text-lg px-2 py-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
+            >
+              <social.icon class="size-10" />
+              <div
+                id={`tooltip-contact-${social.label}`}
+                role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+              >
+                {social.label}
+                <div class="tooltip-arrow" data-popper-arrow />
+              </div>
+            </button>
           </a>
+        </>
+      ))
+      }
+      <>
+        <input
+          type="text"
+          id="copyEmailInput"
+          value="jljulioa@gmail.com"
+          class="sr-only peer"
+          checked
+        />
+        <button
+         id="copyEmail"
+          type="button"
+          data-tooltip-target="tooltip-copy"
+          class="relative text-gray-900 bg-white hover:bg-slate-200 border-4 border-[#3d30ff] dark:border-[#665fcc] me-2 rounded-lg text-lg px-2 py-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
+        >
+          <CopyIcon  class="size-10" />
           <div
-            id={`tooltip-default-${social.label}`}
+            id="tooltip-copy"
             role="tooltip"
             class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
           >
-            {social.label} <div class="tooltip-arrow" data-popper-arrow />
+            Copy@email
+            <div class="tooltip-arrow" data-popper-arrow />
           </div>
-        </>
-      ))
-    }
-    <button
-      id="copyEmail"
-      data-tooltip-target="tooltip-copy"
-      class="copyEmail rounded-3xl mx-2 ring-4 ring-blue-700 hover:ring-[#665fcc] dark:hover:ring-blue-700 dark:ring-[#665fcc] bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700"
-    >
-      <CopyIcon class="sm:size-16 size-12 px-3" />
-    </button>
-    <input
-      type="text"
-      id="copyEmailInput"
-      value="jljulioa@gmail.com"
-      class="sr-only peer"
-      checked
-    />
-    <div
-      id="tooltip-copy"
-      role="tooltip"
-      class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-    >
-      Copy@email <div class="tooltip-arrow" data-popper-arrow></div>
-    </div>
-  </div>
-  <div class="mx-auto mt-8 inline-block">
-    <div class="w-full pt-4">
+        </button>
+      <>
+  <div/>
       <a
-        class="w-full"
         href="https://drive.google.com/file/d/1l9L-pFVUgMIiCDYwoZd9ZjCs5q7-xknn/view?usp=drive_link"
         target="_blank"
       >
         <button
-          data-tooltip-target="tooltip-animation-cv"
           type="button"
-          class="text-white text-lg md:text-2xl bg-blue-700 hover:bg-[#665fcc] dark:bg-[#665fcc] dark:hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full w-full px-5 py-2.5 text-center"
+          data-tooltip-target="tooltip-cv"
+          class="relative mt-10 text-white text-lg md:text-2xl bg-blue-700 hover:bg-[#665fcc] dark:bg-[#665fcc] dark:hover:bg-blue-700 font-medium rounded-3xl w-auto px-5 py-2.5 text-center"
         >
-          CV@jljulioa
-        </button>
+          CV @jljulioa
+          <div
+            id="tooltip-cv"
+            role="tooltip"
+            class="absolute -top-4 z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+          >
+            PDF CV @jljulio
+            <div class="tooltip-arrow" data-popper-arrow></div>
+          </div></button
+        >
       </a>
-      <div
-        id="tooltip-animation-cv"
-        role="tooltip"
-        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-      >
-        PDF/CV @jljulioa
-        <div class="tooltip-arrow" data-popper-arrow></div>
-      </div>
-    </div>
-  </div>
+
 </Section>
 
 <script>
@@ -124,3 +125,4 @@ const iconLinks: { label: string; href: string; icon: any }[] = [
     navigator.clipboard.writeText(copyEmail.value);
   });
 </script>
+</div>

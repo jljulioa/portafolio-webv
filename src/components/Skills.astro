@@ -1,53 +1,56 @@
 ---
-import KubeIcon from './icons/kubernetes-icon.astro';
-import AWSIcon from '../components/icons/AWS-icon.astro';
-import GitHub from './icons/GitHub-icon.astro';
-import Actions from './icons/Actions-icon.astro';
-import Helm from './icons/Helm-icon.astro'
-import EKS from './icons/EKS-icon.astro'
-import ServerlessIcon from './icons/Serverless-icon.astro';
-import Terraform from './icons/Terraform-icon.astro'
-import Sections from '../layouts/Section.astro';
-import Title from '../layouts/Titles.astro';
-import Paragraph from '../layouts/Paragraph.astro';
+import KubeIcon from "./icons/kubernetes-icon.astro";
+import AWSIcon from "../components/icons/AWS-icon.astro";
+import GitHub from "./icons/GitHub-icon.astro";
+import Actions from "./icons/Actions-icon.astro";
+import Helm from "./icons/Helm-icon.astro";
+import EKS from "./icons/EKS-icon.astro";
+import ServerlessIcon from "./icons/Serverless-icon.astro";
+import Terraform from "./icons/Terraform-icon.astro";
+import Sections from "../layouts/Section.astro";
+import Title from "../layouts/Titles.astro";
+import Paragraph from "../layouts/Paragraph.astro";
 
+const iconLinks: { label: string; icon: any }[] = [
+  { label: "TERRAFORM(Learning)", icon: Terraform },
+  { label: "SERVERLESS FRAMEWORK", icon: ServerlessIcon },
+  { label: "AWS", icon: AWSIcon },
+  { label: "AWS EKS", icon: EKS },
+  { label: "HELM", icon: Helm },
+  { label: "KUBERNETES", icon: KubeIcon },
+  { label: "GITHUB", icon: GitHub },
+  { label: "GitHub Actions", icon: Actions },
+];
 ---
 
-
-
-<Sections id="skills" >
-        <Title>Tech Skills</Title>
-        <Paragraph>
-            These are a few skills and tools I've cultivated through daily practice, consistently seeking optimal approaches for continuous improvement.
-        </Paragraph>
-            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 max-w-auto">          
-                {
-                    [{ name: 'TERRAFORM(Learning)', icon: Terraform},
-                    { name: 'SERVERLESS FRAMEWORK', icon: ServerlessIcon },
-                    { name: 'AWS', icon: AWSIcon},
-                    { name: 'AWS EKS', icon: EKS },
-                    { name: 'HELM', icon: Helm },
-                    { name:'KUBERNETES', icon: KubeIcon },
-                    { name:'GITHUB', icon: GitHub},
-                    { name:'GitHub Actions', icon: Actions}
-                    ].map((brand) =>(
-                    <div class="py-2">
-                        <button data-tooltip-target={`tooltip-default-${brand.name}`} type="button" class="relative inline-flex items-center justify-center p-0.5 mx-2 my-2 overflow-hidden rounded-2xl bg-gradient-to-t from-slate-800 dark:from-purple-300 to-transparent ring-4 ring-gray-300 dark:ring-purple-400 hover:ring-blue-500 dark:hover:ring-blue-500">
-                            <brand.icon class="size-20 sm:size-24 md:size-28 px-4"/>
-                        </button>
-                        <div id={`tooltip-default-${brand.name}`} role="tooltip" class="absolute z-10 invisible sm:inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                            {brand.name}
-                            <div class="tooltip-arrow" data-popper-arrow></div>
-                        </div>
-                    </div>
-                    ))
-                }
-            <div/>  
+<Sections id="skills">
+  <Title>Tech Skills</Title>
+  <Paragraph>
+    These are a few skills and tools I've cultivated through daily practice,
+    consistently seeking optimal approaches for continuous improvement.
+  </Paragraph>
+  <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 justify-center items-center">
+    {
+        iconLinks.map((skill) => (
+          <>
+              <button
+                type="button"
+                data-tooltip-target={`tooltip-contact-${skill.label}`}
+                class="relative flex justify-center mt-4 items-center text-gray-900 bg-[url('/assets/backgrounds/blob-scene-haikei-hero.svg')] dark:bg-[url('/assets/backgrounds/bg-profile-dark.svg')] bg-cover bg-center bg-no-repeat border-4 border-[#3d30ff] dark:border-[#665fcc] mx-2 rounded-xl text-lg px-2 py-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
+              >
+                <skill.icon class="size-18" />
+                <div
+                id={`tooltip-contact-${skill.label}`}
+                role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+              >
+              {skill.label}
+                <div class="tooltip-arrow" data-popper-arrow />
+              </div>
+              </button>
+          </>
+        ))      }
+    <div></div>
+  </div>
+  
 </Sections>
-
-
-
-
-
-
-	

@@ -1,27 +1,20 @@
 ---
-import WhatsAppIcon from "./icons/WhatsApp-ico.astro";
-import GmailIcon from "./icons/Gmail-ico.astro";
-import GitHubIcon from "./icons/GitHubLogo-icon.astro";
-import LinkeindIcon from "./icons/Linkeind-icon.astro";
-import CopyIcon from "./icons/Copy-icon.astro";
+import ApiGateway from "./icons/ApiGateway-icon.astro";
+import AWSLambda from "./icons/AWSLambda-icon.astro";
+import AWSDynamoDB from "./icons/AWSDynamoDB-icon.astro";
+import AWSCloudfront from "./icons/AWSCloudfront-icon.astro";
+import AWS_S3 from './icons/AWSS3-icon.astro';
+import ServerlessIcon from "./icons/Serverless-icon.astro";
+import ActionsIcon from "./icons/Actions-icon.astro";
 
-const iconLinks: { label: string; href: string; icon: any }[] = [
-  { label: "Lambda", href: "https://github.com/jljulioa", icon: GitHubIcon },
-  {
-    label: "API Gateway",
-    href: "https://wa.me/+573008865675",
-    icon: WhatsAppIcon,
-  },
-  {
-    label: "AWS - S3",
-    href: "https://www.linkedin.com/in/jljulioa1408/",
-    icon: LinkeindIcon,
-  },
-  { label: "CloudFront", href: "mailto:jljulioa@gmail.com", icon: GmailIcon },
-  { label: "DynamoDB", href: "mailto:jljulioa@gmail.com", icon: GmailIcon },
-  { label: "Serverless Framework", href: "mailto:jljulioa@gmail.com", icon: GmailIcon },
-  { label: "Github Actions", href: "mailto:jljulioa@gmail.com", icon: GmailIcon },
-
+const iconLinks: { label: string; icon: any }[] = [
+  { label: "Lambda", icon: AWSLambda },
+  { label: "API Gateway", icon: ApiGateway},
+  { label: "AWS - S3", icon: AWS_S3},
+  { label: "CloudFront", icon: AWSCloudfront},
+  { label: "DynamoDB", icon: AWSDynamoDB },
+  { label: "Serverless Framework", icon: ServerlessIcon },
+  { label: "Github Actions", icon: ActionsIcon },
 ];
 
 import Title from "../layouts/Titles.astro";
@@ -52,14 +45,17 @@ import Paragraph from "../layouts/Paragraph.astro";
   <div class="w-auto inline-block">
     {
       iconLinks.map((sticks) => (
-          <div
-            id={sticks.label}
-            class="inline-block justify-center items-center rounded-lg px-2 mx-2 my-2 ring-4 ring-blue-700 hover:ring-[#665fcc] dark:hover:ring-blue-700 dark:ring-[#665fcc] bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700"
-          ><div class="flex flex-row items-center">
+        <div
+          id={sticks.label}
+          class="inline-block justify-center items-center rounded-lg px-2 mx-2 my-2 ring-4 ring-blue-700 hover:ring-[#665fcc] dark:hover:ring-blue-700 dark:ring-[#665fcc] bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700"
+        >
+          <div class="flex flex-row items-center">
             <sticks.icon class="sm:size-6 size-5 py-1" />
-            <span class="px-2 text-blue-600 dark:text-[#665fcc]">{sticks.label}</span>  
+            <span class="px-2 text-blue-600 dark:text-[#665fcc]">
+              {sticks.label}
+            </span>
           </div>
-          </div>
+        </div>
       ))
     }
   </div>
@@ -70,20 +66,31 @@ import Paragraph from "../layouts/Paragraph.astro";
   </Paragraph>
   <a class="flex justify-center" href="/upload/">
     <button
-      data-tooltip-target="tooltip-animation-gallery"
+      data-tooltip-target="tooltip-gallery"
       type="button"
-      class="text-white text-lg md:text-2xl bg-blue-700 hover:bg-[#665fcc] dark:bg-[#665fcc] dark:hover:bg-blue-700 font-medium rounded-3xl w-auto px-5 py-2.5 text-center"
+      class="relative text-white text-lg md:text-2xl bg-blue-700 hover:bg-[#665fcc] dark:bg-[#665fcc] dark:hover:bg-blue-700 font-medium rounded-3xl w-auto px-5 py-2.5 text-center"
     >
       Gallery Wallpapers
+      <div
+        id="tooltip-gallery"
+        role="tooltip"
+        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+      >
+        Watch Full Gallery
+        <div class="tooltip-arrow" data-popper-arrow></div>
+      </div>
     </button>
   </a>
-
-  <div
-    id="tooltip-animation-gallery"
-    role="tooltip"
-    class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-  >
-    Watch Full Gallery
-    <div class="tooltip-arrow" data-popper-arrow></div>
-  </div>
+  <!-- <div class="w-auto inline-block">
+    {
+      iconLinks.map((sticks) => (
+      <div class="inline-flex me-4 my-2 overflow-hidden border-4 border-blue-700 hover:border-[#665fcc] bg-white rounded-lg group">
+        <span class="px-2 py-1  bg-blue-700 hover:bg-[#665fcc] flex items-center justify-center">
+          <sticks.icon class="sm:size-8 size-5" />
+        </span>
+        <span class="pl-4 pr-5 my-auto">{sticks.label}</span>
+      </div>
+      ))
+    }
+  </div> -->
 </Section>

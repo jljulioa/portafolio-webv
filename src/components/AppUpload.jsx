@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
 
-
 function AppUpload() {
   const [namefile, setNamefile] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
@@ -17,7 +16,7 @@ function AppUpload() {
   const handleUpload = async () => {
     try {
       const response = await fetch(
-        `https://idge3vng43.execute-api.us-east-1.amazonaws.com/dev/upload?filename=${namefile.name}`
+        `https://7u25b1bw4e.execute-api.us-east-1.amazonaws.com/dev/upload?filename=${namefile.name}`
       );
       const data = await response.json();
 
@@ -48,7 +47,7 @@ function AppUpload() {
 
   return (
     <div className="relative flex items-center justify-center my-auto ">
-      <div className=" flex sm:flex-row flex-col gap-2 border-4 dark:border-[#665fcc] rounded-lg p-4 items-center justify-center dark:bg-gray-700">
+      <div className=" flex sm:flex-row w-full flex-col gap-2 border-4 dark:border-[#665fcc] rounded-lg p-4 items-center justify-center bg-[#001220] dark:bg-gray-700">
         <input
           className="rounded-lg bg-slate-100 h-full w-full border-2 dark:border-[#665fcc] mx-4"
           type="file"
