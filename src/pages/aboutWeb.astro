@@ -3,14 +3,66 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "../layouts/Section.astro";
 import Title from "../layouts/Titles.astro";
 import Paragraph from "../layouts/Paragraph.astro";
-
 ---
 
 <BaseLayout>
   <Section>
     <Title>About this Web</Title>
     <Paragraph>
-      
+      This website's design relies on a Serverless Infrastructure with two main
+      sections:<br /><br />
+
+      Frontend: Amplify + GitHub was chosen for its simplicity. You associate
+      your app in Amplify with your GitHub repository, and that's it. In our
+      case, we also integrated Certificate Manager and Route 53.<br /><br />
+
+      Alternatively, we considered using an Nginx image to deploy the website in
+      EKS via ECR, using GitHub Actions for CI/CD. However, as this approach
+      wasn't needed, we opted for Amplify.<br /><br />
+
+      Backend: Lambda, a powerful AWS tool, was chosen for its versatility. The
+      backend is composed of pure lambda microservices.<br /><br />
     </Paragraph>
   </Section>
+  <div class="bg-white mx-auto h-auto w-full max-w-5xl px-8 py-8 rounded-lg">
+    <img src="/assets/SchemaWeb.svg" class="w-full h-auto" alt="" />
+  </div>
+  <Section>
+  <Paragraph>
+    In this case, five lambdas are used:<br /><br />
+
+    - **getURLS**: Generates image URLs using CloudFront distribution and the
+    Object Key. Signs the URL with an expiration period.<br /><br />
+
+    - **getThumbnail**: Triggered when an image is uploaded, it creates a record
+    in DynamoDB storing Object Keys and resizes the image.<br /><br />
+
+    - **deleteThumbnail**: Deletes the DynamoDB record and the Thumbnail when
+    the original image is deleted.<br /><br />
+
+    - **deleteWallpaper**: Exposed to the API, it deletes the original image in
+    the S3 Bucket.<br /><br />
+
+    - **uploadWallpaper**: Also exposed to the API, it uploads the image to the
+    S3 Bucket using a signed URL.<br /><br />
+
+    <span
+      class="text-xl md:text-2xl text-blue-500 dark:text-[#665fcc] font-semibold"
+      >Serverless Deploy:</span
+    > Implemented GitHub Actions with IAM Role (OIDC Provider) for CI/CD, specific
+    to the Backend repository.<br /><br />
+
+    <span
+      class="text-xl md:text-2xl text-blue-500 dark:text-[#665fcc] font-semibold"
+      >Environment Variables:</span
+    > Securely managed using SSM Parameter Store for easy and safe modification.<br
+    /><br />
+
+    <span
+      class="text-xl md:text-2xl text-blue-500 dark:text-[#665fcc] font-semibold"
+      >Image Bucket:</span
+    > The Bucket is PRIVATE, not accessible publicly (CORS enabled). CloudFront with
+    KeyGroups enhances security.
+  </Paragraph>
+</Section>
 </BaseLayout>

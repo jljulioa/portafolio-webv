@@ -1,26 +1,29 @@
 ---
-import AppUpload from "../components/AppUpload";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Section from "../layouts/Section.astro";
 import Title from "../layouts/Titles.astro";
 import AppGallery from "../components/AppGallery";
-import AppGalleryUser from "../components/AppGalleryUser";
+import AppIndex from "../components/AppGalleryIndex";
+import Paragraph from "../layouts/Paragraph.astro";
 ---
 
 <BaseLayout>
-  <Section class="bg-[url('/assets/backgrounds/blob-scene-haikei-hero.svg')] dark:bg-[url('/assets/backgrounds/blob-scene-haikei-hero-dark.svg')] bg-cover bg-center pb-20 bg-no-repeat  sm:rounded-2xl">
-    <Title class="py-20">WALLPAPER UPLOAD</Title>
-    <div class="w-full max-w-auto flex items-center justify-center">
-      <AppUpload client:load />
-    </div>
-    </a>
-  </Section>
-  <di class="max-w-full grid justify-center items-center">
-    <Title>User Wallpapers</Title>
-    <AppGalleryUser client:load />
-  </di>
+  <div class="mt-40 max-w-full grid justify-center items-center">
+    <Title class="text-6xl">WallPapers</Title>
+    <Paragraph>
+      In this section you can Upload your wallpapers and delete them below with
+      just a simple clicks.<br/>
+      If you want to know more about how this works in AWS, click on <a
+        href="/aboutWeb"
+        class="text-xl md:text-2xl text-blue-500 dark:text-[#665fcc] font-semibold"
+        >About@Web</a>
+        <br/>
+        <br/>
+      You can only upload images in PNG and JPG, up to 5MB
+    </Paragraph>
+    <AppIndex client:load />
+  </div>
   <div class="max-w-full grid justify-center items-center">
-    <Title>Wall-AI Repo</Title>
+    <Title>Wall-AI Collection</Title>
     <AppGallery client:load />
   </div>
 </BaseLayout>

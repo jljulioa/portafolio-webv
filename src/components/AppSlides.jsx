@@ -4,7 +4,7 @@ import { useState } from "react";
 import { RxDotFilled } from "react-icons/rx";
 
 function AppSlides() {
-  const { data } = fetchApi();
+  const { data } = fetchApi("https://47rjce8lqb.execute-api.us-east-1.amazonaws.com/urls");
 
   const slides = data.urls.slice(0, 5);
 

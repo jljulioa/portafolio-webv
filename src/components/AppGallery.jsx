@@ -1,7 +1,7 @@
 import { fetchApi } from "./JS/fetchApi";
 
 function AppGallery() {
-  const { data, loading } = fetchApi();
+  const { data, loading } = fetchApi("https://47rjce8lqb.execute-api.us-east-1.amazonaws.com/urls");
 
   return (
     <div className="flex justify-center items-center">
@@ -37,6 +37,7 @@ function AppGallery() {
           <div key={index} className="grid justify-center p-4 items-center">
             <a href={data.urlsOri[index].signedUrlOri} target="_blank">
               <img
+                loading="lazy"
                 className="w-full max-w-96 rounded-lg h-auto max-h-96 ring-4 ring-gray-300 dark:ring-gray-500 hover:ring-blue-500 dark:hover:ring-blue-500"
                 src={urlData.signedUrl}
                 alt={data.objectKeys[index]}

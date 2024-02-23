@@ -12,8 +12,8 @@ import Title from "../layouts/Titles.astro";
 import Paragraph from "../layouts/Paragraph.astro";
 
 const iconLinks: { label: string; icon: any }[] = [
-  { label: "TERRAFORM(Learning)", icon: Terraform },
-  { label: "SERVERLESS FRAMEWORK", icon: ServerlessIcon },
+  { label: "TERRAFORM", icon: Terraform },
+  { label: "SERVERLESS", icon: ServerlessIcon },
   { label: "AWS", icon: AWSIcon },
   { label: "AWS EKS", icon: EKS },
   { label: "HELM", icon: Helm },
@@ -32,25 +32,26 @@ const iconLinks: { label: string; icon: any }[] = [
   <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 justify-center items-center">
     {
         iconLinks.map((skill) => (
-          <>
-              <button
-                type="button"
+          <div class="grid content-between">
+              <div
+                
                 data-tooltip-target={`tooltip-contact-${skill.label}`}
-                class="relative flex justify-center mt-4 items-center text-gray-900 bg-[url('/assets/backgrounds/blob-scene-haikei-hero.svg')] dark:bg-[url('/assets/backgrounds/bg-profile-dark.svg')] bg-cover bg-center bg-no-repeat border-4 border-[#3d30ff] dark:border-[#665fcc] mx-2 rounded-xl text-lg px-2 py-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
+                class="relative max-w-40 w-auto skills-shield flex justify-center mt-4 items-center text-gray-900 bg-[url('/assets/backgrounds/bg-skills.svg')] dark:bg-[url('/assets/backgrounds/bg-profile-dark.svg')] bg-cover bg-center bg-no-repeat border-2 border-[#3d30ff] dark:border-[#665fcc] mx-2 rounded-xl text-lg px-5 py-5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
               >
                 <skill.icon class="size-18" />
-                <div
-                id={`tooltip-contact-${skill.label}`}
-                role="tooltip"
-                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-              >
-              {skill.label}
-                <div class="tooltip-arrow" data-popper-arrow />
               </div>
-              </button>
-          </>
+              <p class="inline-block font-semibold">{skill.label}</p>
+          </div>
         ))      }
     <div></div>
   </div>
-  
 </Sections>
+
+
+<style>
+  .skills-shield {
+    -webkit-mask-image: url(/assets/frame-shield.svg);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+  }
+</style>
