@@ -16,10 +16,11 @@ interface Props {
 
 const { title, description } = Astro.props;
 ---
-
+<!doctype html>
 <html lang="en">
   <head>
     <MainHead title={title} description={description} />
+    
   </head>
   <body
     class="relative bg-[#001220] text-neutral-400 dark:text-slate-900 dark:bg-indigo-100"
