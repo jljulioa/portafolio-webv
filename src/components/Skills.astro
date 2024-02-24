@@ -29,22 +29,24 @@ const iconLinks: { label: string; icon: any }[] = [
     These are a few skills and tools I've cultivated through daily practice,
     consistently seeking optimal approaches for continuous improvement.
   </Paragraph>
-  <div
-    class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 justify-center items-center"
-  >
+  <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 justify-center items-center">
     {
-      iconLinks.map((skill) => (
-        <div class="grid content-between">
-          <div class="relative max-w-40 w-auto skills-shield flex justify-center mt-4 items-center text-gray-900 bg-[url('/assets/backgrounds/bg-skills.svg')] dark:bg-[url('/assets/backgrounds/bg-profile-dark.svg')] bg-cover bg-center bg-no-repeat border-2 border-[#3d30ff] dark:border-[#665fcc] mx-2 rounded-xl text-lg px-5 py-5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white">
-            <skill.icon class="size-18" />
+        iconLinks.map((skill) => (
+          <div class="grid content-between">
+              <div
+                
+                data-tooltip-target={`tooltip-contact-${skill.label}`}
+                class="relative max-w-40 w-auto skills-shield flex justify-center mt-4 items-center text-gray-900 bg-[url('/assets/backgrounds/bg-skills.svg')] dark:bg-[url('/assets/backgrounds/bg-profile-dark.svg')] bg-cover bg-center bg-no-repeat border-2 border-[#3d30ff] dark:border-[#665fcc] mx-2 rounded-xl text-lg px-5 py-5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
+              >
+                <skill.icon class="size-18" />
+              </div>
+              <p class="inline-block font-semibold">{skill.label}</p>
           </div>
-          <p class="inline-block font-semibold">{skill.label}</p>
-        </div>
-      ))
-    }
+        ))      }
     <div></div>
   </div>
 </Sections>
+
 
 <style>
   .skills-shield {
