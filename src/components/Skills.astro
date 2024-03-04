@@ -34,11 +34,9 @@ const iconLinks: { label: string; icon: any }[] = [
         iconLinks.map((skill) => (
           <div class="grid content-between">
               <div
-                
-                data-tooltip-target={`tooltip-contact-${skill.label}`}
-                class="relative max-w-40 w-auto skills-shield flex justify-center mt-4 items-center text-gray-900 bg-[url('/assets/backgrounds/bg-skills.svg')] dark:bg-[url('/assets/backgrounds/bg-profile-dark.svg')] bg-cover bg-center bg-no-repeat border-2 border-[#3d30ff] dark:border-[#665fcc] mx-2 rounded-xl text-lg px-5 py-5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
+                class="max-w-40 w-auto skills-shield flex justify-center mt-4 items-center text-gray-900 bg-[url('/assets/backgrounds/bg-skills.svg')] dark:bg-[url('/assets/backgrounds/bg-profile-dark.svg')] bg-cover bg-center bg-no-repeat border-2 border-[#3d30ff] dark:border-[#665fcc] mx-2 rounded-xl text-lg px-5 py-5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
               >
-                <skill.icon class="size-18" />
+                <skill.icon class="size-full aspect-square p-1" />
               </div>
               <p class="inline-block font-semibold">{skill.label}</p>
           </div>

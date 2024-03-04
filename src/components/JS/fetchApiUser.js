@@ -5,11 +5,7 @@ export function fetchApiUser() {
     "https://nqmcdup752.execute-api.us-east-1.amazonaws.com/urls";
   const [loading, setLoading] = useState(true);
   const [count, setCount] = useState(0);
-  const [dataUser, setDataUser] = useState({
-    urls: [{ signedUrl: "" }],
-    urlsOri: [{ signedUrlOri: "" }],
-    objectKeys: [],
-  });
+  const [dataUser, setDataUser] = useState(null);
 
   const handleClick = () => {
     setCount(Math.random()); // Update count to trigger fetch
@@ -41,11 +37,7 @@ export function fetchApiUser() {
     };
 
     // Reset user data before fetching new data
-    setDataUser({
-      urls: [{ signedUrl: "" }],
-      urlsOri: [{ signedUrlOri: "" }],
-      objectKeys: [],
-    });
+    setDataUser(null);
 
     fetchData(); // Call the asynchronous function
   }, [count]);

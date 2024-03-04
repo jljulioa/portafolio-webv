@@ -132,10 +132,10 @@ function AppIndex() {
         <div className="grid grid-cols-1 mb-20 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-20 justify-center item center text-lg w-auto">
           {dataUser?.urls?.map((urlData, index) => (
             <div key={index} className="grid justify-center p-4 items-center">
-              <a href={dataUser.urlsOri[index].signedUrlOri} target="_blank">
+              <a href={dataUser.urlsOri[index]} target="_blank">
                 <img
                   className="w-full max-w-96 rounded-lg h-auto max-h-96 ring-4 ring-gray-300 dark:ring-gray-500 hover:ring-blue-500 dark:hover:ring-blue-500"
-                  src={urlData.signedUrl}
+                  src={dataUser.urls[index]}
                   alt={dataUser.objectKeys[index]}
                 />
               </a>
